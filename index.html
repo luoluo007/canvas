@@ -7,8 +7,8 @@
 <style>
 .snowflake {
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             background-color: #fff;
             border-radius: 50%;
             opacity: 0.8;
@@ -34,6 +34,12 @@ canvas {
 	cursor: crosshair;
 	display: block;
 }
+.song {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
 
 
 </style>
@@ -44,8 +50,7 @@ canvas {
 	
 	<audio controls="controls" class="song" loop="true" autoplay="autoplay">
 		<source src="./assets/01.flac"></source>
-		
-	</audio> 
+	</audio>
 	
 	
 
@@ -274,7 +279,7 @@ function loop() {
 	ctx.globalCompositeOperation = 'lighter';
 	
     var text = "Happy Birthday 张子玉 !";  
-  ctx.font = "100px sans-serif";
+  ctx.font = "90px sans-serif";
   var textData = ctx.measureText(text);
   ctx.fillStyle = "rgba("+parseInt(random(0,255))+","+parseInt(random(0,255))+","+parseInt(random(0,255))+",0.3)";
   ctx.fillText(text,cw /2-textData.width/2,ch/2); 
@@ -353,7 +358,7 @@ window.onload = loop;
         snowflake.style.left = Math.random() * window.innerWidth + 'px';
         snowflake.style.animationDuration = Math.random() * 5 + 5 + 's';
         snowflake.style.opacity = Math.random();
-        snowflake.style.fontSize = Math.random() * 10 + 30 + 'px';
+        snowflake.style.fontSize = Math.random() * 10 + 20 + 'px';
 
         const randomColor = getRandomColor();
         snowflake.style.backgroundColor = randomColor;
@@ -374,7 +379,7 @@ window.onload = loop;
 
     function snowfall() {
         const snowContainer = document.getElementById('snow-container');
-        const numSnowflakes = 50; // Adjust the number of snowflakes here
+        const numSnowflakes = 10; // Adjust the number of snowflakes here
 
         for (let i = 0; i < numSnowflakes; i++) {
             const snowflake = createSnowflake();
